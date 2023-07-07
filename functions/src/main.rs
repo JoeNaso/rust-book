@@ -49,6 +49,15 @@ fn main() {
     }
     println!("End count = {cnt}");
 
+    // .map results in a lazy iterator, so final values need to be usage 
+    // similarly, .fold() produces a single output (ala reduce) so can be printed
+    let x: Vec<_> = vec![1, 2, 3, 4, 5, 6, 7, 8]
+        .iter()
+        .map(|x| x + 3)
+        .collect();
+        // .fold(0, |x, y| x + y);
+    println!("{:?}", &x)
+
 }
 
 fn other_func(val: u32) {
